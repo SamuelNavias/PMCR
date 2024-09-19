@@ -604,7 +604,7 @@ This will return approximately **124.67**, meaning that an IQ of about 124.67 is
 
 These functions are useful in various applications, such as calculating percentiles or finding probabilities in a normal distribution.
 
-now lets see if I knit some new stuff what happens.
+Now I am adding new stuff and seeing if that makes it to the github
 
 ```{r, echo=FALSE}
 # Run the script to automatically commit and push changes after knitting

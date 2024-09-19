@@ -1,9 +1,12 @@
 ---
-title: "Probability, R, and Monte Carlo Simulation"
+title: "Chapter 1: Probability, R, and Monte Carlo Simulation"
 output:
-  html_document: default
-  pdf_document: default
+  html_document:
+    includes:
+      before_body: "sidebar.html"
+    css: "custom.css"
 ---
+
 
 ```{r setup, include=FALSE}
 # Load the DiagrammeR package

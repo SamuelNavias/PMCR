@@ -1,0 +1,24 @@
+<!-- Collapsible Sidebar -->
+<button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+<div id="sidebar" class="sidebar">
+    <a href="index.html">Home</a>
+    <a href="CHAPTER_1_LINK.html">Chapter 1</a>
+    <a href="CHAPTER_2_LINK.html">Chapter 2</a>
+</div>
+
+<!-- Sidebar toggle script -->
+<script>
+    function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        var mainContent = document.querySelector(".main-content");
+
+        // Toggle sidebar
+        if (sidebar.classList.contains("sidebar-collapsed")) {
+            sidebar.classList.remove("sidebar-collapsed");
+            mainContent.classList.remove("main-collapsed");
+        } else {
+            sidebar.classList.add("sidebar-collapsed");
+            mainContent.classList.add("main-collapsed");
+        }
+    }
+</script>

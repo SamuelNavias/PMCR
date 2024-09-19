@@ -15,6 +15,8 @@ library(DiagrammeR)
 source("git_push_after_knit.R")
 ```
 
+### [Back Home](https://samuelnavias.github.io/PMCR/home.html)
+
 ## Some Stuff: Probability / R / Monte Carlo
 
 ### What is Probability? (The Logic Of Uncertainty)

@@ -18,8 +18,6 @@ library(DiagrammeR)
 source("git_push_after_knit.R")
 ```
 
-### [Back Home](https://samuelnavias.github.io/PMCR/home.html)
-
 ## Normal Distribution: A Simple Explanation
 
 The **normal distribution** (also known as the **Gaussian distribution**) is one of the most commonly used probability distributions in statistics. It has the following characteristics:

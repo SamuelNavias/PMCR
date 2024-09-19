@@ -1,9 +1,12 @@
 ---
-title: "Normal Distribution and Other Stuff"
+title: "Chapter 2: Normal Distribution and Other Stuff"
 output:
-  html_document: default
-  pdf_document: default
+  html_document:
+    includes:
+      before_body: "sidebar.html"
+    css: "custom.css"
 ---
+
 
 ```{r setup, include=FALSE}
 # Load the DiagrammeR package

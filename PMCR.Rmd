@@ -10,6 +10,11 @@ output:
 library(DiagrammeR)
 ```
 
+```{r, echo=FALSE}
+# Run the script to automatically commit and push changes after knitting
+source("git_push_after_knit.R")
+```
+
 ## Some Stuff: Probability / R / Monte Carlo
 
 ### What is Probability? (The Logic Of Uncertainty)
@@ -601,12 +606,3 @@ This will return approximately **124.67**, meaning that an IQ of about 124.67 is
 - **Normal Distribution**: A bell-shaped, symmetrical distribution described by its mean and standard deviation.
 - **`pnorm(x)`**: Returns the probability that a value from the normal distribution is less than or equal to `x`.
 - **`qnorm(p)`**: Returns the value `x` such that the probability of a value being less than or equal to `x` is `p`.
-
-These functions are useful in various applications, such as calculating percentiles or finding probabilities in a normal distribution.
-
-Now I am adding new stuff and seeing if that makes it to the github
-
-```{r, echo=FALSE}
-# Run the script to automatically commit and push changes after knitting
-source("git_push_after_knit.R")
-```

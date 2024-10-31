@@ -1,0 +1,125 @@
+---
+title: "Chapter 3: Linear Reggresion"
+output:
+  html_document:
+    includes:
+      before_body: "sidebar.html"
+    css: "custom.css"
+---
+
+```{r setup, include=FALSE}
+# Load the DiagrammeR package
+library(DiagrammeR)
+```
+
+```{r, echo=FALSE}
+# Run the script to automatically commit and push changes after knitting
+source("git_push_after_knit.R")
+```
+
+## Variance
+
+**Variance** measures the spread of a set of values around the mean. It is calculated as the average of the squared differences from the mean. Mathematically, variance for a variable \( X \) with \( N \) observations is given by:
+
+\[
+\text{Var}(X) = \frac{1}{N} \sum_{i=1}^N (X_i - \bar{X})^2
+\]
+
+where:
+- \( X_i \) represents individual data points.
+- \( \bar{X} \) is the mean of \( X \).
+- \( N \) is the total number of observations.
+
+A high variance indicates that the data points are spread out around the mean, while a low variance suggests they are close to the mean.
+
+### Example Calculation
+```{r}
+x <- c(4, 7, 10, 6, 8)
+mean_x <- mean(x)
+variance_x <- mean((x - mean_x)^2)
+variance_x
+```
+
+## Covariance
+
+**Covariance** measures the degree to which two variables move in relation to each other. If the covariance is positive, it indicates that when one variable increases, the other tends to increase as well. If the covariance is negative, it suggests that one variable tends to decrease when the other increases.
+
+The formula for covariance between two variables \( X \) and \( Y \) is:
+
+\[
+\text{Cov}(X, Y) = \frac{1}{N} \sum_{i=1}^N (X_i - \bar{X})(Y_i - \bar{Y})
+\]
+
+where:
+- \( X_i \) and \( Y_i \) are individual data points for \( X \) and \( Y \).
+- \( \bar{X} \) and \( \bar{Y} \) are the means of \( X \) and \( Y \), respectively.
+
+### Example Calculation
+```{r}
+y <- c(10, 13, 17, 12, 14)
+covariance_xy <- mean((x - mean(x)) * (y - mean(y)))
+covariance_xy
+```
+
+## Correlation
+
+**Correlation** is a standardized measure of covariance that quantifies the strength and direction of the linear relationship between two variables. It is calculated by dividing the covariance by the product of the standard deviations of \( X \) and \( Y \):
+
+\[
+r = \frac{\text{Cov}(X, Y)}{\sqrt{\text{Var}(X) \cdot \text{Var}(Y)}}
+\]
+
+Correlation, denoted \( r \), ranges from -1 to 1:
+- \( r = 1 \): Perfect positive correlation.
+- \( r = -1 \): Perfect negative correlation.
+- \( r = 0 \): No linear relationship.
+
+### Example Calculation
+correlation_xy <- covariance_xy / (sd(x) * sd(y))
+correlation_xy
+
+## Simple Linear Regression
+
+Simple linear regression is a statistical method used to model the relationship between a dependent variable \( Y \) and an independent variable \( X \) by fitting a linear equation to observed data.
+
+The general form of the linear regression line is:
+
+\[
+\hat{Y} = b_0 + b_1 X
+\]
+
+where:
+- \( \hat{Y} \) is the predicted value of \( Y \).
+- \( b_0 \) is the y-intercept.
+- \( b_1 \) is the slope of the line, representing the change in \( Y \) for a one-unit change in \( X \).
+
+This form is analogous to the equation \( y = mx + b \) from algebra, where:
+- \( m \) is the slope (here \( b_1 \)),
+- \( b \) is the y-intercept (here \( b_0 \)).
+
+### Minimizing the Sum of Squared Errors (SSE)
+
+To find the best-fit line, linear regression minimizes the **sum of squared errors (SSE)**, which is the sum of the squared differences between the observed values \( Y \) and the predicted values \( \hat{Y} \):
+
+\[
+\text{SSE} = \sum_{i=1}^N (Y_i - \hat{Y}_i)^2
+\]
+
+By minimizing SSE, we find the values of \( b_0 \) and \( b_1 \) that best fit the data.
+
+### Example Calculation
+```{r}
+# Using the lm function in R to calculate the best-fit line for our data.
+model <- lm(y ~ x)
+summary(model)
+```
+
+### Plotting the Best-Fit Line
+```{r}
+plot(x, y, main = "Linear Regression: Best-Fit Line", xlab = "X", ylab = "Y")
+abline(model, col = "blue")
+```
+## Conclusion
+
+Variance, covariance, correlation, and linear regression are closely related concepts in statistics. Variance measures the spread of a single variable, while covariance describes how two variables vary together. Correlation standardizes covariance to provide a measure of the strength and direction of a linear relationship between two variables. Finally, simple linear regression uses these concepts to model the relationship between two variables by finding the line that minimizes the sum of squared errors (SSE).
+```

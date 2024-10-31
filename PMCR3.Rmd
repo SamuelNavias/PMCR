@@ -66,7 +66,7 @@ covariance_xy
 **Correlation** is a standardized measure of covariance that quantifies the strength and direction of the linear relationship between two variables. It is calculated by dividing the covariance by the product of the standard deviations of \( X \) and \( Y \):
 
 \[
-r = \frac{\text{Cov}(X, Y)}{\sqrt{Var(X) \cdot Var(Y)}}
+r = \frac{\text{Cov}(X, Y)}{\sqrt{\text{Var}(X) \cdot \text{Var}(Y)}}
 \]
 
 Correlation, denoted \( r \), ranges from -1 to 1:
@@ -119,6 +119,7 @@ summary(model)
 plot(x, y, main = "Linear Regression: Best-Fit Line", xlab = "X", ylab = "Y")
 abline(model, col = "blue")
 ```
+
 ## Conclusion
 
 Variance, covariance, correlation, and linear regression are closely related concepts in statistics. Variance measures the spread of a single variable, while covariance describes how two variables vary together. Correlation standardizes covariance to provide a measure of the strength and direction of a linear relationship between two variables. Finally, simple linear regression uses these concepts to model the relationship between two variables by finding the line that minimizes the sum of squared errors (SSE).

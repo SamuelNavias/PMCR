@@ -123,4 +123,12 @@ abline(model, col = "blue")
 ## Conclusion
 
 Variance, covariance, correlation, and linear regression are closely related concepts in statistics. Variance measures the spread of a single variable, while covariance describes how two variables vary together. Correlation standardizes covariance to provide a measure of the strength and direction of a linear relationship between two variables. Finally, simple linear regression uses these concepts to model the relationship between two variables by finding the line that minimizes the sum of squared errors (SSE).
+
+
+```{r}
+end_date <- Sys.Date()
+
+start_date <- end_date - 61*30.4375
 ```
+
+
